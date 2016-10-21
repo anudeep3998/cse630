@@ -1,0 +1,208 @@
+--------- beginning of main
+10-13 16:19:37.388   222  1030 D hardware_info: hw_info_append_hw_type : device_name = speaker-lite
+10-13 16:19:39.528 19626 19626 I art     : Waiting for a blocking GC DisableMovingGc
+10-13 16:19:39.530 19626 19626 I art     : Starting a blocking GC DisableMovingGc
+10-13 16:19:39.538 19626 15058 I SubscribedFeeds: Received message
+10-13 16:19:39.609 11063 15061 W Gmail   : Sync started for account: account:-535134329
+10-13 16:19:39.611 11063 15061 I Gmail   : notifyAccountChanged
+10-13 16:19:39.613 11063 11102 I Gmail   : getAccountsCursor
+10-13 16:19:39.633 11063 15061 I Gmail   : MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 579159, normalSync: true
+10-13 16:19:39.997 11063 15061 I Gmail   : MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 579227, normalSync: true
+10-13 16:19:40.286 11063 15061 I Gmail   : MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 579227, normalSync: true
+10-13 16:19:40.287 11063 15061 I Gmail   : lowestBackward conversation id 0
+10-13 16:19:40.375 11063 15061 I Gmail   : AppDataSearch: minSeqNo=4540, maxSeqNo=4565, lastCommittedSequence=4540
+10-13 16:19:40.390 19750 15084 W IcingInternalCorpora: getNumBytesRead when not calculated.
+10-13 16:19:40.432 19750 25038 I Icing   : Usage reports 0 indexed 0 rejected 0 imm upload false
+10-13 16:19:40.438 19750 25038 I Icing   : Usage reports 0 indexed 0 rejected 0 imm upload false
+10-13 16:19:40.447 11063 15061 I Gmail   : Sending provider changed intent: Intent { act=android.intent.action.PROVIDER_CHANGED dat=content://gmail-ls/unread/^sq_ig_i_notification (has extras) }
+10-13 16:19:40.455 11063 15061 I Gmail   : notifyAccountChanged
+10-13 16:19:40.457 11063 11083 I Gmail   : getAccountsCursor
+10-13 16:19:40.457 11063 15061 W Gmail   : Sync complete for account: account:-535134329
+10-13 16:19:41.444 19750 25038 I Icing   : Indexing 6DF30C2616CE0F73282B6023C33C7D0B2B956805 from com.google.android.gm
+10-13 16:19:41.617 19750 25038 I Icing   : Indexing done 6DF30C2616CE0F73282B6023C33C7D0B2B956805
+10-13 16:19:44.245   231   317 I ThermalEngine: Sensor:batt_therm:31700 mC
+10-13 16:19:51.501   222  1030 D audio_hw_primary: out_set_parameters: enter: usecase(1: low-latency-playback) kvpairs: routing=2
+10-13 16:19:51.511   222  1030 D audio_hw_primary: start_output_stream: enter: stream(0xb7d43510)usecase(1: low-latency-playback) devices(0x2)
+10-13 16:19:51.511   222  1030 D audio_hw_primary: start_output_stream: enter: usecase(1: low-latency-playback) devices(0x2)
+10-13 16:19:51.511   222  1030 D audio_hw_primary: select_devices: out_snd_device(2: speaker) in_snd_device(0: )
+10-13 16:19:51.511   222  1030 W msm8974_platform: Codec backend bitwidth 16, samplerate 48000
+10-13 16:19:51.512   222  1030 D hardware_info: hw_info_append_hw_type : device_name = speaker-lite
+10-13 16:19:51.512   222  1030 I msm8974_platform: platform_send_audio_calibration: sending audio calibration for snd_device(2) acdb_id(14)
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> send_audio_cal, acdb_id = 14, path =  0
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> send_adm_topology
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> send_audtable
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_CAL
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> send_audvoltable
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_STEP_TABLE
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+10-13 16:19:51.512   222  1030 D ACDB-LOADER: ACDB -> AUDIO_SET_AFE_CAL
+10-13 16:19:51.517   222  1030 D audio_hw_primary: select_devices: done
+10-13 16:19:51.588  4998  4998 E RecyclerView: No adapter attached; skipping layout
+10-13 16:19:51.588  4998  4998 E RecyclerView: No adapter attached; skipping layout
+10-13 16:19:51.605  4998  4998 E RecyclerView: No adapter attached; skipping layout
+10-13 16:19:51.605  4998  4998 E RecyclerView: No adapter attached; skipping layout
+10-13 16:19:51.640  4998  5082 I qtaguid : Failed write_ctrl(t -1 0 -1) res=-1 errno=9
+10-13 16:19:51.641  4998  5082 I qtaguid : Tagging socket -1 with tag 0(0) for uid -1 failed errno=-9
+10-13 16:19:51.641  4998  5082 I NetworkManagementSocketTagger: tagSocketFd(-1, 0, -1) failed with errno-9
+10-13 16:19:51.834  4998  5082 I qtaguid : Failed write_ctrl(u -1) res=-1 errno=9
+10-13 16:19:51.835  4998  5082 I qtaguid : Untagging socket -1 failed errno=-9
+10-13 16:19:51.835  4998  5082 W NetworkManagementSocketTagger: untagSocket(-1) failed with errno -9
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: Unable to cache icon com.whatsapp_7f0208ca_320.png
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.whatsapp_7f0208ca_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.049  1162  1217 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.050  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.whatsapp_7f0208ca_320.png
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: Unable to cache icon com.google.android.gm_7f030000_320.png
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.google.android.gm_7f030000_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.130  1162  1206 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.131  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.google.android.gm_7f030000_320.png
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: Unable to cache icon com.facebook.orca_7f020838_320.png
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.facebook.orca_7f020838_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.334  1162  1191 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.335  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.facebook.orca_7f020838_320.png
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: Unable to cache icon com.android.bluetooth_7f030000_320.png
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.android.bluetooth_7f030000_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.391  1162  1217 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.391  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.android.bluetooth_7f030000_320.png
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: Unable to cache icon com.lastpass.lpandroid_7f02012b_320.png
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.lastpass.lpandroid_7f02012b_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.442  1162  1206 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.443  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.lastpass.lpandroid_7f02012b_320.png
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: Unable to cache icon flipboard.app_7f02012f_320.png
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/flipboard.app_7f02012f_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.521  1162  1191 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.521  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/flipboard.app_7f02012f_320.png
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: Unable to cache icon com.google.android.keep_7f030000_320.png
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.google.android.keep_7f030000_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.589  1162  1217 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.589  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.google.android.keep_7f030000_320.png
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: Unable to cache icon com.google.android.apps.fireball_7f030000_320.png
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.google.android.apps.fireball_7f030000_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.688  1162  1206 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.689  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.google.android.apps.fireball_7f030000_320.png
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: Unable to cache icon com.android.messaging_7f030001_320.png
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.android.messaging_7f030001_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.787  1162  1191 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.788  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.android.messaging_7f030001_320.png
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: Unable to cache icon com.adobe.reader_7f0200cb_320.png
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.adobe.reader_7f0200cb_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.888  1162  1217 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.890  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.adobe.reader_7f0200cb_320.png
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: Unable to cache icon com.google.zxing.client.android_7f020000_320.png
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: java.io.FileNotFoundException: /data/system/theme/icons/com.google.zxing.client.android_7f020000_320.png: open failed: EACCES (Permission denied)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:452)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:87)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at java.io.FileOutputStream.<init>(FileOutputStream.java:72)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.themeservice.IconCacheManagerService$2.cacheComposedIcon(IconCacheManagerService.java:75)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at org.cyanogenmod.internal.themes.IIconCacheManager$Stub.onTransact(IIconCacheManager.java:58)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at android.os.Binder.execTransact(Binder.java:453)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: Caused by: android.system.ErrnoException: open failed: EACCES (Permission denied)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at libcore.io.Posix.open(Native Method)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:186)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	at libcore.io.IoBridge.open(IoBridge.java:438)
+10-13 16:19:52.940  1162  1206 W IconCacheManagerService: 	... 5 more
+10-13 16:19:52.940  4998  5557 W IconPackHelper: Unable to cache icon /data/system/theme/icons/com.google.zxing.client.android_7f020000_320.png
+10-13 16:19:54.249   231   317 I ThermalEngine: Sensor:batt_therm:31700 mC
+10-13 16:19:54.719   222  1030 D audio_hw_primary: out_standby: enter: stream (0xb7d43510) usecase(1: low-latency-playback)
+10-13 16:19:54.774   222  1030 D hardware_info: hw_info_append_hw_type : device_name = speaker-lite
