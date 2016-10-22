@@ -16,9 +16,72 @@
 package com.google.android.exoplayer2.demo;
 
 import android.app.Application;
+import android.os.Environment;
+import android.util.Log;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Placeholder application to facilitate overriding Application methods for debugging and testing.
  */
 public class DemoApplication extends Application {
+
+    public File logFile;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+//        if ( isExternalStorageWritable() ) {
+//
+//            File appDirectory = new File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS) + "/ExoplayerLogs" );
+//            File logDirectory = new File( appDirectory + "/log" );
+//            logFile = new File( logDirectory, "logcat" + System.currentTimeMillis() + ".txt" );
+//
+//            // create app folder
+//            if ( !appDirectory.exists() ) {
+//                appDirectory.mkdir();
+//            }
+//
+//            // create log folder
+//            if ( !logDirectory.exists() ) {
+//                logDirectory.mkdir();
+//            }
+//
+//            // clear the previous logcat and then write the new one to the file
+//            try {
+//                //Process process = Runtime.getRuntime().exec("logcat -c");
+//                Process process = Runtime.getRuntime().exec("logcat -df " + logFile);
+//                Log.d("CSE630","haha");
+//            } catch ( IOException e ) {
+//                e.printStackTrace();
+//            }
+//
+//        } else if ( isExternalStorageReadable() ) {
+//            // only readable
+//        } else {
+//            // not accessible
+//        }
+    }
+
+    /* Checks if external storage is available for read and write */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if ( Environment.MEDIA_MOUNTED.equals( state ) ) {
+            return true;
+        }
+        return false;
+    }
+
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if ( Environment.MEDIA_MOUNTED.equals( state ) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals( state ) ) {
+            return true;
+        }
+        return false;
+    }
+
 }

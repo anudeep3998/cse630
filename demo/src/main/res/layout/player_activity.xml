@@ -40,6 +40,12 @@
         android:textSize="10sp"
         tools:ignore="SmallSp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dump_logs"
+        android:text="Dump Logs"/>
+
     <LinearLayout android:id="@+id/controls_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

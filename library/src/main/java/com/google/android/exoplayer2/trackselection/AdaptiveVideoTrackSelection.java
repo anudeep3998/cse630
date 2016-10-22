@@ -240,14 +240,14 @@ public class AdaptiveVideoTrackSelection extends BaseTrackSelection {
       if (nowMs == Long.MIN_VALUE || !isBlacklisted(i, nowMs)) {
         Format format = getFormat(i);
         if (format.bitrate <= effectiveBitrate) {
-          Log.d("CSE630","bitrateEstimate: "+bitrateEstimate+" effectiveBitrate: "+effectiveBitrate+" lowestNonBlacklistedBitrateIndex: "+i);
+          Log.d("CSE630","bitrateEstimate: "+((double)bitrateEstimate/1000000)+" Mbps     effectiveBitrate: "+((double)effectiveBitrate/1000000)+" Mbps     lowestNonBlacklistedBitrateIndex: "+i);
           return i;
         } else {
           lowestBitrateNonBlacklistedIndex = i;
         }
       }
     }
-    Log.d("CSE630","bitrateEstimate: "+bitrateEstimate+" effectiveBitrate: "+effectiveBitrate+" lowestNonBlacklistedBitrateIndex: "+lowestBitrateNonBlacklistedIndex);
+    Log.d("CSE630","bitrateEstimate: "+((double)bitrateEstimate/1000000)+" Mbps     effectiveBitrate: "+((double)effectiveBitrate/1000000)+" Mbps      lowestNonBlacklistedBitrateIndex: "+lowestBitrateNonBlacklistedIndex);
     return lowestBitrateNonBlacklistedIndex;
   }
 

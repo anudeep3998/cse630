@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
@@ -67,6 +68,9 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Util;
+
+import java.io.File;
+import java.io.IOException;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
@@ -119,6 +123,7 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
   private boolean shouldRestorePosition;
   private int playerWindow;
   private long playerPosition;
+  private Button dumpButton;
 
   // Activity lifecycle
 
@@ -139,11 +144,42 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
     debugRootView = (LinearLayout) findViewById(R.id.controls_root);
     debugTextView = (TextView) findViewById(R.id.debug_text_view);
     retryButton = (Button) findViewById(R.id.retry_button);
+    dumpButton = (Button) findViewById(R.id.dump_logs);
     retryButton.setOnClickListener(this);
 
     simpleExoPlayerView = (SimpleExoPlayerView) findViewById(R.id.player_view);
     simpleExoPlayerView.setControllerVisibilityListener(this);
     simpleExoPlayerView.requestFocus();
+
+    dumpButton.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        File appDirectory = new File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS) + "/ExoplayerLogs" );
+        File logDirectory = new File( appDirectory + "/log" );
+        File logFile = new File( logDirectory, "logcat" + System.currentTimeMillis() + ".txt" );
+
+        // create app folder
+        if ( !appDirectory.exists() ) {
+          appDirectory.mkdir();
+        }
+
+        // create log folder
+        if ( !logDirectory.exists() ) {
+          logDirectory.mkdir();
+        }
+
+        // clear the previous logcat and then write the new one to the file
+        try {
+          //Process process = Runtime.getRuntime().exec("logcat -c");
+          Process process = Runtime.getRuntime().exec("logcat -df " + logFile+" *:S CSE630:D" +
+                  " ");
+          process = Runtime.getRuntime().exec("logcat -c");
+          Toast.makeText(getBaseContext(),"Printed log to : "+logFile.getPath(),Toast.LENGTH_SHORT).show();
+        } catch ( IOException e ) {
+          e.printStackTrace();
+        }
+      }
+    });
   }
 
   @Override
@@ -397,7 +433,7 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
   @Override
   public void onLoadingChanged(boolean isLoading) {
     // Do nothing.
-    Log.d("CSE630","Buffer: "+player.getBufferedPercentage()+"% b:"+player.getBufferedPosition()+" c:"+player.getCurrentPosition());
+    //Log.d("CSE630","Buffer: "+player.getBufferedPercentage()+"% "+((double)(player.getBufferedPosition()-player.getCurrentPosition()))/1000+"s");
   }
 
   @Override
@@ -416,7 +452,7 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
   @Override
   public void onTimelineChanged(Timeline timeline, Object manifest) {
     // Do nothing.
-    Log.d("CSE630","Buffer: "+player.getBufferedPercentage()+"% "+player.getBufferedPosition());
+    //Log.d("CSE630","Buffer: "+player.getBufferedPercentage()+"% "+player.getBufferedPosition());
   }
 
   @Override

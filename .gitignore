@@ -7,6 +7,7 @@ lint.xml
 buildout
 demo/buildout
 library/buildout
+volley
 
 # IntelliJ IDEA
 .idea

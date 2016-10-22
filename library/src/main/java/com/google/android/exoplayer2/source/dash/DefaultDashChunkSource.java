@@ -48,6 +48,7 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.Util;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A default {@link DashChunkSource} implementation.
@@ -227,7 +228,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
         trackSelection.getSelectionData(), sampleFormat, segmentNum);
     out.chunk = nextMediaChunk;
 
-    Log.d("CSE630","Time: "+System.nanoTime()+" PlaybackPositionUs : "+playbackPositionUs+" Format : "+sampleFormat.toString());
+    Log.d("CSE630","CurrentSystemTimestamp: "+System.nanoTime()+" Buffer in s: "+ (((double)bufferedDurationUs)/1000000)+" PlaybackPositionUs : "+playbackPositionUs+" Format : "+ (sampleFormat != null ? sampleFormat.toString() : null));
   }
 
   @Override
@@ -252,7 +253,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
       }
     }
 
-    Log.d("CSE630","Time : "+System.nanoTime()+"  Chunk size : "+chunk.bytesLoaded());
+    Log.d("CSE630","CurrentSystemTimestamp : "+System.nanoTime()+"  Chunk size in bytes : "+chunk.bytesLoaded());
 //    Log.d("CSE630","Excess Playtime in buffer: (in us)"+(ExoPlayerImplInternal.PlaybackInfo.bufferedPositionUs- ExoPlayerImplInternal.PlaybackInfo.positionUs));
   }
 
@@ -322,7 +323,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
     DataSpec dataSpec = new DataSpec(segmentUri.getUri(), segmentUri.start, segmentUri.length,
         representation.getCacheKey());
 
-    Log.d("CSE630","Chunk length in us: "+segmentUri.length+" starttime : "+segmentUri.start);
+    Log.d("CSE630","Chunk length in bytes: "+segmentUri.length+" starttime : "+segmentUri.start+" l: "+(endTimeUs-startTimeUs));
 
     if (representationHolder.extractorWrapper == null) {
       return new SingleSampleMediaChunk(dataSource, dataSpec, trackFormat, trackSelectionReason,
