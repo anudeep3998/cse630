@@ -154,28 +154,12 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
     dumpButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        File appDirectory = new File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS) + "/ExoplayerLogs" );
-        File logDirectory = new File( appDirectory + "/log" );
-        File logFile = new File( logDirectory, "logcat" + System.currentTimeMillis() + ".txt" );
-
-        // create app folder
-        if ( !appDirectory.exists() ) {
-          appDirectory.mkdir();
-        }
-
-        // create log folder
-        if ( !logDirectory.exists() ) {
-          logDirectory.mkdir();
-        }
 
         // clear the previous logcat and then write the new one to the file
         try {
           //Process process = Runtime.getRuntime().exec("logcat -c");
-          Process process = Runtime.getRuntime().exec("logcat -df " + logFile+" *:S CSE630:D" +
-                  " ");
-          process = Runtime.getRuntime().exec("logcat -c");
-          Toast.makeText(getBaseContext(),"Printed log to : "+logFile.getPath(),Toast.LENGTH_SHORT).show();
-        } catch ( IOException e ) {
+          ((DemoApplication)getApplication()).stopAndWriteLog();
+        } catch ( Exception e ) {
           e.printStackTrace();
         }
       }
