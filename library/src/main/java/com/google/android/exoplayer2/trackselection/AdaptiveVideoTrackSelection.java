@@ -53,6 +53,14 @@ public class AdaptiveVideoTrackSelection extends BaseTrackSelection {
           DEFAULT_MIN_DURATION_TO_RETAIN_AFTER_DISCARD_MS, DEFAULT_BANDWIDTH_FRACTION);
     }
 
+    public Factory(BandwidthMeter bandwidthMeter, int quality) {
+      this (bandwidthMeter, DEFAULT_MAX_INITIAL_BITRATE,
+              DEFAULT_MIN_DURATION_FOR_QUALITY_INCREASE_MS,
+              DEFAULT_MAX_DURATION_FOR_QUALITY_DECREASE_MS,
+              DEFAULT_MIN_DURATION_TO_RETAIN_AFTER_DISCARD_MS, DEFAULT_BANDWIDTH_FRACTION);
+      AdaptiveVideoTrackSelection.fixedQuality = quality;
+    }
+
     /**
      * @param bandwidthMeter Provides an estimate of the currently available bandwidth.
      * @param maxInitialBitrate The maximum bitrate in bits per second that should be assumed
@@ -94,6 +102,7 @@ public class AdaptiveVideoTrackSelection extends BaseTrackSelection {
   public static final int DEFAULT_MAX_DURATION_FOR_QUALITY_DECREASE_MS = 25000;
   public static final int DEFAULT_MIN_DURATION_TO_RETAIN_AFTER_DISCARD_MS = 25000;
   public static final float DEFAULT_BANDWIDTH_FRACTION = 0.75f;
+  public static int fixedQuality = -1;
 
   private final BandwidthMeter bandwidthMeter;
   private final int maxInitialBitrate;
@@ -239,7 +248,7 @@ public class AdaptiveVideoTrackSelection extends BaseTrackSelection {
     for (int i = 0; i < length; i++) {
       if (nowMs == Long.MIN_VALUE || !isBlacklisted(i, nowMs)) {
         Format format = getFormat(i);
-        if (format.bitrate <= effectiveBitrate && format.height == 360) {
+        if (format.bitrate <= effectiveBitrate && (fixedQuality == -1 || format.height == fixedQuality)) {
           Log.d("CSE630","bitrateEstimate: "+((double)bitrateEstimate/1000000)+" Mbps     effectiveBitrate: "+((double)effectiveBitrate/1000000)+" Mbps     lowestNonBlacklistedBitrateIndex: "+i);
           return i;
         } else {

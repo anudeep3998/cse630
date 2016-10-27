@@ -124,6 +124,7 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
   private int playerWindow;
   private long playerPosition;
   private Button dumpButton;
+  private int fixedQuality = -1;
 
   // Activity lifecycle
 
@@ -270,8 +271,9 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
       }
 
       eventLogger = new EventLogger();
+      fixedQuality = intent.getIntExtra("QUALITY",-1);
       TrackSelection.Factory videoTrackSelectionFactory =
-          new AdaptiveVideoTrackSelection.Factory(BANDWIDTH_METER);
+          new AdaptiveVideoTrackSelection.Factory(BANDWIDTH_METER,fixedQuality);
       trackSelector = new DefaultTrackSelector(mainHandler, videoTrackSelectionFactory);
       trackSelector.addListener(this);
       trackSelector.addListener(eventLogger);

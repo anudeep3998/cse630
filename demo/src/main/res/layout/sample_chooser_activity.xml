@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,26 +17,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="40dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp">
+
         <EditText
+            android:id="@+id/UrlEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:id="@+id/UrlEditText"/>
+            android:layout_weight="4" />
+
         <Button
-            android:layout_width="100dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
             android:id="@+id/GoButton"
-            android:text="Go"/>
-      </LinearLayout>
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Go" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp">
+
+        <Spinner
+            android:id="@+id/quality_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
 
 
-  <ExpandableListView android:id="@+id/sample_list"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
+    <ExpandableListView
+        android:id="@+id/sample_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

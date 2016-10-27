@@ -26,11 +26,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,12 +64,14 @@ import java.util.UUID;
 /**
  * An activity for selecting from a list of samples.
  */
-public class SampleChooserActivity extends Activity {
+public class SampleChooserActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     private static final String TAG = "SampleChooserActivity";
     private EditText UrlEditText;
     private Button GoButton;
     private RequestQueue httpQueue;
+    private Spinner qualitySpinner;
+    private int selectedQuality;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +92,14 @@ public class SampleChooserActivity extends Activity {
 
         UrlEditText = (EditText) findViewById(R.id.UrlEditText);
         GoButton = (Button) findViewById(R.id.GoButton);
+        qualitySpinner = (Spinner) findViewById(R.id.quality_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.spinner_vals, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        qualitySpinner.setAdapter(adapter);
+        qualitySpinner.setOnItemSelectedListener(this);
+
         httpQueue = Volley.newRequestQueue(getApplicationContext());
 
         GoButton.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +133,7 @@ public class SampleChooserActivity extends Activity {
                         Log.d("CSE630", "URL Response: " + response);
                         Log.d("CSE630", "MPD URL : "+ dashMPDUrl);
 
-                        UriSample sample = new UriSample("Play",null,null,null,false,dashMPDUrl,"mpd");
+                        UriSample sample = new UriSample("Play",null,null,null,false,dashMPDUrl,"mpd",selectedQuality);
                         startActivity(sample.buildIntent(getApplicationContext()));
                     }
                 }, new Response.ErrorListener() {
@@ -156,6 +169,18 @@ public class SampleChooserActivity extends Activity {
 
     private void onSampleSelected(Sample sample) {
         startActivity(sample.buildIntent(this));
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String v = parent.getItemAtPosition(position).toString();
+        v = v.substring(0,v.length()-1);
+        selectedQuality = v.equals("Aut")? -1 : Integer.parseInt(v);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     private final class SampleListLoader extends AsyncTask<String, Void, List<SampleGroup>> {
@@ -298,7 +323,7 @@ public class SampleChooserActivity extends Activity {
                         preferExtensionDecoders, playlistSamplesArray);
             } else {
                 return new UriSample(sampleName, drmUuid, drmLicenseUrl, drmKeyRequestProperties,
-                        preferExtensionDecoders, uri, extension);
+                        preferExtensionDecoders, uri, extension,-1);
             }
         }
 
@@ -452,13 +477,15 @@ public class SampleChooserActivity extends Activity {
 
         public final String uri;
         public final String extension;
+        public final int quality;
 
         public UriSample(String name, UUID drmSchemeUuid, String drmLicenseUrl,
                          String[] drmKeyRequestProperties, boolean preferExtensionDecoders, String uri,
-                         String extension) {
+                         String extension, int quality) {
             super(name, drmSchemeUuid, drmLicenseUrl, drmKeyRequestProperties, preferExtensionDecoders);
             this.uri = uri;
             this.extension = extension;
+            this.quality = quality;
         }
 
         @Override
@@ -466,6 +493,7 @@ public class SampleChooserActivity extends Activity {
             return super.buildIntent(context)
                     .setData(Uri.parse(uri))
                     .putExtra(PlayerActivity.EXTENSION_EXTRA, extension)
+                    .putExtra("QUALITY",quality)
                     .setAction(PlayerActivity.ACTION_VIEW);
         }
 
