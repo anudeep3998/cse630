@@ -239,7 +239,7 @@ public class AdaptiveVideoTrackSelection extends BaseTrackSelection {
     for (int i = 0; i < length; i++) {
       if (nowMs == Long.MIN_VALUE || !isBlacklisted(i, nowMs)) {
         Format format = getFormat(i);
-        if (format.bitrate <= effectiveBitrate) {
+        if (format.bitrate <= effectiveBitrate && format.height == 360) {
           Log.d("CSE630","bitrateEstimate: "+((double)bitrateEstimate/1000000)+" Mbps     effectiveBitrate: "+((double)effectiveBitrate/1000000)+" Mbps     lowestNonBlacklistedBitrateIndex: "+i);
           return i;
         } else {
