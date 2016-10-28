@@ -18,6 +18,7 @@ package com.google.android.exoplayer2.util;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import android.util.Log;
 
 /**
  * Calculate any percentile over a sliding window of weighted values. A maximum weight is
@@ -82,6 +83,7 @@ public final class SlidingPercentile {
    * @param value The value of the new observation.
    */
   public void addSample(int weight, float value) {
+    Log.d("CSE630", "Added new sample to window :: weight: "+(weight)+" value: "+value);
     ensureSortedByIndex();
 
     Sample newSample = recycledSampleCount > 0 ? recycledSamples[--recycledSampleCount]
@@ -125,6 +127,7 @@ public final class SlidingPercentile {
         return currentSample.value;
       }
     }
+    Log.d("CSE630", "No. of samples in window : "+samples.size());
     // Clamp to maximum value or NaN if no values.
     return samples.isEmpty() ? Float.NaN : samples.get(samples.size() - 1).value;
   }
