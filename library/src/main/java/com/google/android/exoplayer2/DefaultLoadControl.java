@@ -65,6 +65,7 @@ public final class DefaultLoadControl implements LoadControl {
 
   private int targetBufferSize;
   private boolean isBuffering;
+  private static final boolean LOG_INFREQUENTLY = false;
 
   /**
    * Constructs a new instance, using the {@code DEFAULT_*} constants defined in this class.
@@ -142,7 +143,7 @@ public final class DefaultLoadControl implements LoadControl {
     boolean previsBuffering = isBuffering;
     isBuffering = bufferTimeState == BELOW_LOW_WATERMARK
         || (bufferTimeState == BETWEEN_WATERMARKS && isBuffering && !targetBufferSizeReached);
-    if(previsBuffering != isBuffering) {
+    if(!LOG_INFREQUENTLY || (LOG_INFREQUENTLY && (previsBuffering != isBuffering))) {
       Log.d("CSE630", "bufferedDurationUs: " + bufferedDurationUs + " bufferTimeState: " + bufferTimeState + "allocator.getTotalBytesAllocated(): "+allocator.getTotalBytesAllocated()+" targetBufferSizeReached: " + targetBufferSizeReached + " isBuffering: " + isBuffering + " previsBuffering: " + previsBuffering + " targetBufferSize: " + targetBufferSize + " decisionMaxBuf: " + maxBufferUs);
     }
     return isBuffering;
