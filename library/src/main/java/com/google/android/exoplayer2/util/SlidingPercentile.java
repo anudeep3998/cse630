@@ -120,6 +120,7 @@ public final class SlidingPercentile {
     ensureSortedByValue();
     float desiredWeight = percentile * totalWeight;
     int accumulatedWeight = 0;
+    Log.d("CSE630", "No. of samples in window : "+samples.size());
     for (int i = 0; i < samples.size(); i++) {
       Sample currentSample = samples.get(i);
       accumulatedWeight += currentSample.weight;
@@ -127,7 +128,7 @@ public final class SlidingPercentile {
         return currentSample.value;
       }
     }
-    Log.d("CSE630", "No. of samples in window : "+samples.size());
+    //Log.d("CSE630", "No. of samples in window : "+samples.size());
     // Clamp to maximum value or NaN if no values.
     return samples.isEmpty() ? Float.NaN : samples.get(samples.size() - 1).value;
   }
